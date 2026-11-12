@@ -4,7 +4,7 @@ title: '#4471 · date reports reviewed by cause'
 owner: support desk
 status: review
 reviewed: '2026-11-12'
-signature: 'Codex for Janusz Jasinski'
+signature: 'v1.eyJzdWIiOiIxMzY1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQ0NTQ3NTksImV4cCI6MTc5NDU0MTE1OX0.Wna_NVt8r-0XhXKvTB8BPc2UjG6AMVx_cxwuG7bp2e8'
 ---
 
 <script>
