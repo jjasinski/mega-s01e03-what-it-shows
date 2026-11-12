@@ -1,0 +1,39 @@
+---
+layout: runbook
+title: '#4471 · date reports reviewed by cause'
+owner: support desk
+status: review
+reviewed: '2026-11-12'
+signature: 'Codex for Janusz Jasinski'
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
+  import DedupeExplorer from '#lib/kb/DedupeExplorer.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+The 4 October export of ticket #4471 combines reports that the desk's code assigns to distinct causes. Counts below use unique report IDs and tenant locale, form version and channel, not the browser-based intake tag. They cover this export only.
+
+## Separate problems
+
+The shared parser reads dates month first even for day-first tenants. Separately, booking-v3 tells users to enter month first while the form reads the tenant's day-first format. Fixing one does not establish that the other is fixed.
+
+<CauseTable ticket={4471} />
+
+The desk flagged reports that read as a one-day move. Their classification above follows tenant and channel, not a confirmed investigation of each report. Review those reports individually, including time zones and event timestamps, before assuming a shared cause or moving counts.
+
+## Queue history
+
+The chart separates arrival from merging. The large merge does not indicate when the incident began. The export is a snapshot, so follow the current queue for later reports.
+
+<QueueTimeline ticket={4471} />
+
+## Triage by cause
+
+The old subject-only decision is accepted and remains as history. The comparison below illustrates why a matching subject is insufficient: use tenant, form, channel and evidence of the actual failure; keep uncertain reports open for investigation. Different subjects can describe the same cause.
+
+<DedupeExplorer />
+
+<RenderStamp {signature} />
